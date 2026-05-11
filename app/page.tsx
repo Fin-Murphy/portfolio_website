@@ -10,7 +10,7 @@ export default function Home() {
             className="inline-block transition-all duration-500 ease-out group-hover:-translate-y-3 group-hover:text-indigo-500 dark:group-hover:text-indigo-400"
             style={{ transitionDelay: `${i * 30}ms` }}
           >
-            {char === " " ? " " : char}
+            {char === " " ? "\u00A0" : char}
           </span>
         ))}
       </h1>
