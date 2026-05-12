@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="flex flex-1 items-center justify-center bg-zinc-50 dark:bg-black">
       <div className="group flex cursor-default select-none items-center gap-4 sm:gap-6 md:gap-8">
-        <span
+        {/* <span
           aria-hidden
           style={{
             WebkitMaskImage: `url(${favicon.src})`,
@@ -19,7 +19,7 @@ export default function Home() {
             maskPosition: "center",
           }}
           className="inline-block h-28 w-28 bg-zinc-900 transition-all duration-500 ease-out group-hover:-translate-y-3 group-hover:bg-indigo-500 sm:h-36 sm:w-36 md:h-52 md:w-52 dark:bg-zinc-50 dark:group-hover:bg-indigo-400"
-        />
+        /> */}
 
         <div className="flex flex-col">
           <h1 className="flex text-6xl font-semibold tracking-tight text-zinc-900 sm:text-8xl md:text-9xl dark:text-zinc-50">
