@@ -13,7 +13,7 @@ const ABOUT = [
 
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col items-center bg-zinc-50 pt-12 dark:bg-black">
+    <main className="flex flex-1 flex-col items-center pt-12">
       <div className="group flex cursor-default select-none items-center gap-4 sm:gap-6 md:gap-8">
         {/* <span
           aria-hidden
