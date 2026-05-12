@@ -3,11 +3,9 @@ import favicon from "./favicon.png";
 const NAME = "Finnian Murphy";
 
 const ABOUT = [
-  "Sophomore at Georgetown University",
-  "College of Arts and Sciences, Class of 2028",
-  "Double major in Mathematics and Computer Science",
-  "Apple Software Development Kit and App Store fluent",
-  "C++, Swift / SwiftUI, Python, HTML, CSS, Excel, and Visual Basic for Applications",
+  "Sophomore at Georgetown University (CAS '28)",
+  "Math + CS Double Major",
+  "Apple SDK, C++, SwiftUI, Python, HTML + CSS, Excel, and Visual Basic for Applications",
   "Photography enthusiast",
   "Triathlon and Tricking",
 ];
