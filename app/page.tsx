@@ -20,20 +20,25 @@ export default function Home() {
           }}
           className="inline-block h-28 w-28 bg-zinc-900 transition-all duration-500 ease-out group-hover:-translate-y-3 group-hover:bg-indigo-500 sm:h-36 sm:w-36 md:h-52 md:w-52 dark:bg-zinc-50 dark:group-hover:bg-indigo-400"
         />
-        <h1 className="flex text-6xl font-semibold tracking-tight text-zinc-900 sm:text-8xl md:text-9xl dark:text-zinc-50">
-          {NAME.split("").map((char, i) => (
-            <span
-              key={i}
-              className="inline-block transition-all duration-500 ease-out group-hover:-translate-y-3 group-hover:text-indigo-500 dark:group-hover:text-indigo-400"
-              style={{ transitionDelay: `${i * 30}ms` }}
-            >
-              {char === " " ? " " : char}
-            </span>
-          ))}
-        </h1>
+
+        <div className="flex flex-col">
+          <h1 className="flex text-6xl font-semibold tracking-tight text-zinc-900 sm:text-8xl md:text-9xl dark:text-zinc-50">
+            {NAME.split("").map((char, i) => (
+              <span
+                key={i}
+                className="inline-block transition-all duration-500 ease-out group-hover:-translate-y-3 group-hover:text-indigo-500 dark:group-hover:text-indigo-400"
+                style={{ transitionDelay: `${i * 30}ms` }}
+              >
+                {char === " " ? " " : char}
+              </span>
+            ))}
+          </h1>
+          <h1>Under construction! Migrating from old portfolio</h1>
+        </div>
+
       </div>
 
-      <div> <h1>Under construction! Migrating from old portfolio</h1> </div>
+
     </main>
   );
 }
