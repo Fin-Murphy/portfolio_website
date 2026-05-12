@@ -32,6 +32,8 @@ export default function Home() {
           ))}
         </h1>
       </div>
+
+      <div> <h1>Under construction! Migrating from old portfolio</h1> </div>
     </main>
   );
 }
