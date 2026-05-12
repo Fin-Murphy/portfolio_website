@@ -3,11 +3,12 @@ import favicon from "./favicon.png";
 const NAME = "Finnian Murphy";
 
 const ABOUT = [
-  "Sophomore at Georgetown University (CAS '28)",
-  "Math + CS Double Major",
-  "Apple SDK, C++, SwiftUI, Python, HTML + CSS, Excel, and Visual Basic for Applications",
-  "Photography enthusiast",
-  "Triathlon and Tricking",
+  "Math + CS Double Major @ Georgetown University (CAS '28)",
+  "Frontend: Next.js, React, HTML + CSS + Tailwind",
+  "Backend: Apple SDK, C++, Java, SwiftUI, Python",
+  "Miscellaneous : SQL, Pandas, NumPy, SupaBase, Cloudflare Workers",
+
+  "Photography, Triathlon, and Tricking "
 ];
 
 export default function Home() {
