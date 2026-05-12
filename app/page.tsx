@@ -34,7 +34,7 @@ export default function Home() {
           {NAME.split("").map((char, i) => (
             <span
               key={i}
-              className="inline-block transition-all duration-500 ease-out group-hover:-translate-y-3 group-hover:text-indigo-500 dark:group-hover:text-indigo-400"
+              className="inline-block transition-all duration-500 ease-[steps(6,jump-end)] group-hover:-translate-y-3 group-hover:text-indigo-500 dark:group-hover:text-indigo-400"
               style={{ transitionDelay: `${i * 30}ms` }}
             >
               {char === " " ? " " : char}
