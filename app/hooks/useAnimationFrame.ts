@@ -4,16 +4,14 @@ import { useEffect, useRef } from "react";
 
 type FrameCallback = (elapsedMs: number) => void;
 
-const prefersReducedMotion = () =>
-  typeof window !== "undefined" &&
-  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
 /**
  * Runs `callback(elapsedMs)` on a requestAnimationFrame loop, throttled to
  * roughly `fps`. Elapsed time is accumulated from per-frame deltas (each delta
  * clamped to 100ms), so a backgrounded tab — where rAF stalls — resumes
- * smoothly instead of jumping. If the user prefers reduced motion, `callback`
- * is invoked once with 0 and the loop never starts.
+ * smoothly instead of jumping.
+ *
+ * Note: this intentionally does not honor `prefers-reduced-motion` — callers
+ * use it for motion deemed mild enough to keep. Gate on that yourself if not.
  *
  * `callback` is read from a ref every render, so it can close over fresh state
  * without restarting the loop.
@@ -25,11 +23,6 @@ export function useAnimationFrame(callback: FrameCallback, fps = 24) {
   });
 
   useEffect(() => {
-    if (prefersReducedMotion()) {
-      callbackRef.current(0);
-      return;
-    }
-
     const frameInterval = 1000 / fps;
     let rafId = 0;
     let lastTime: number | null = null;

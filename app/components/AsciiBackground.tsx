@@ -22,10 +22,14 @@ export default function AsciiBackground() {
       const w = rect.width / 10; // the span holds 10 characters
       const h = rect.height;
       cellRef.current = { w, h };
-      setGrid({
-        cols: Math.ceil(window.innerWidth / w) + 1,
-        rows: Math.ceil(window.innerHeight / h) + 1,
-      });
+      const cols = Math.ceil(window.innerWidth / w) + 1;
+      const rows = Math.ceil(window.innerHeight / h) + 1;
+      setGrid({ cols, rows });
+      // Paint a static first frame right away: covers the pre-measure blank,
+      // and is the only frame shown when prefers-reduced-motion is set.
+      if (preRef.current) {
+        preRef.current.textContent = waveField(0, { cols, rows, mouse: null });
+      }
     };
     measure();
     window.addEventListener("resize", measure);
@@ -55,7 +59,7 @@ export default function AsciiBackground() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 -z-10 select-none overflow-hidden text-zinc-200 dark:text-zinc-800"
+      className="pointer-events-none fixed inset-0 -z-10 select-none overflow-hidden text-zinc-400 dark:text-zinc-600"
     >
       <span
         ref={measureRef}
