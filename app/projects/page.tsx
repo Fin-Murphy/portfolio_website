@@ -6,7 +6,7 @@ const PROJECTS = [
   },
   {
     icon: "⌨️",
-    title: "ScatterCLI — command-line interface with Obsidian Kanban",
+    title: "ScatterCLI — shell interface with Obsidian Kanban",
     href: "https://github.com/Fin-Murphy/ScatterCLI",
   },
   {
@@ -45,7 +45,7 @@ export default function ProjectsPage() {
   return (
     <main className="flex flex-1 flex-col items-center pt-12">
       <div className="flex flex-1 items-center justify-center px-6">
-        <ul className="max-w-4xl space-y-3 bg-white px-6 py-5 text-lg text-black sm:text-xl dark:bg-background dark:text-white">
+        <ul className="max-w-4xl space-y-9 bg-white px-10 py-15 text-lg text-black sm:text-xl dark:bg-background dark:text-white">
           {PROJECTS.map((project) => (
             <li key={project.href} className="flex items-center gap-4">
               <span aria-hidden="true" className="shrink-0 text-2xl">
