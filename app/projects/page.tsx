@@ -1,4 +1,9 @@
 const PROJECTS = [
+    {
+    icon: "🗂️",
+    title: "Reverb - an AI-powered productivity tool.",
+    href: "https://github.com/Fin-Murphy/Reverb_Public",
+  },
   {
     icon: "🗂️",
     title: "Protocol Tracker — Proof of concept for Reverb",
