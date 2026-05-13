@@ -9,6 +9,11 @@ const PROJECTS = [
     title: "ScatterCLI — command-line interface with Obsidian Kanban",
     href: "https://github.com/Fin-Murphy/ScatterCLI",
   },
+  {
+    icon: "📚",
+    title: "canvProj — Python script that dumps your Canvas assignments into an Obsidian Kanban board",
+    href: "https://github.com/Fin-Murphy/canvProj-main",
+  },
   // {
   //   icon: "🧠",
   //   title: "scatterbrain — terminal-based productivity concept (the ScatterCLI prototype)",
