@@ -34,8 +34,8 @@ export default function Home() {
           {NAME.split("").map((char, i) => (
             <span
               key={i}
-              className="inline-block transition-all duration-500 ease-[steps(6,jump-end)] group-hover:-translate-y-3 group-hover:text-indigo-500 dark:group-hover:text-indigo-400"
-              style={{ transitionDelay: `${i * 30}ms` }}
+              className="inline-block transition-all duration-500 ease-[steps(6,jump-end)] group-hover:-translate-y-3 group-hover:text-orange-500 dark:group-hover:text-orange-500"
+              style={{ transitionDelay: `${i * 40}ms` }}
             >
               {char === " " ? " " : char}
             </span>
@@ -44,7 +44,7 @@ export default function Home() {
       </div>
 
       <div className="flex flex-1 items-center justify-center px-6">
-        <ul className="max-w-4xl space-y-3 text-lg text-zinc-900 sm:text-xl dark:text-white">
+        <ul className="max-w-4xl space-y-3 text-lg text-black sm:text-xl dark:text-white">
           {ABOUT.map((line) => (
             <li key={line}>{line}</li>
           ))}

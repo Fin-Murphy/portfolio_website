@@ -1,4 +1,4 @@
-const RAMP = " .:•-=+*#o"; // sparse -> dense
+const RAMP = " .•:-=+*oO0"; // sparse -> dense
 // const RAMP = "12345678"; // sparse -> dense, more contrast
 
 export type WaveContext = {
