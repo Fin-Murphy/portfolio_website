@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
 import AsciiBackground from "@/app/components/AsciiBackground";
+import TopBar from "@/app/components/TopBar";
 import "./globals.css";
 
 const geistMono = Geist_Mono({
@@ -27,6 +28,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <AsciiBackground />
+        <TopBar />
         {children}
       </body>
     </html>
