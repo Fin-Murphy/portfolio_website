@@ -1,8 +1,9 @@
 import Link from "next/link";
 
 const LINKS = [
+  { label: "Home", href: "/" },
   { label: "Projects", href: "/projects" },
-  { label: "Art", href: "/art" },
+  { label: "Art", href: "/art" }
 ];
 
 export default function TopBar() {
