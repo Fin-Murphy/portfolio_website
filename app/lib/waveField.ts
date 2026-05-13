@@ -14,7 +14,7 @@ export type WaveContext = {
 const Y_SQUASH = 2;
 
 // Reach of the cursor halo, in character columns.
-const CURSOR_RADIUS = 9;
+const CURSOR_RADIUS = 5;
 
 /**
  * A slow field of summed sine waves, rendered as a grid of density characters,
