@@ -34,11 +34,11 @@ const PROJECTS = [
     title: "Customite — a custom theme for Obsidian",
     href: "https://github.com/Fin-Murphy/Customite-Theme",
   },
-  {
-    icon: "🎓",
-    title: "FLON Capstone — capstone project for FLON",
-    href: "https://github.com/Fin-Murphy/FLON_Capstone",
-  },
+  // {
+  //   icon: "🎓",
+  //   title: "FLON Capstone — capstone project for FLON",
+  //   href: "https://github.com/Fin-Murphy/FLON_Capstone",
+  // },
 ];
 
 export default function ProjectsPage() {
