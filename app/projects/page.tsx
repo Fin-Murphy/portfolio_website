@@ -5,7 +5,7 @@ const PROJECTS = [
     href: "https://github.com/Fin-Murphy/Reverb_Public",
   },
   {
-    icon: "🗂️",
+    icon: "🔁",
     title: "Protocol Tracker — Proof of concept for Reverb",
     href: "https://github.com/Fin-Murphy/Protocol-Tracker",
   },
@@ -29,11 +29,11 @@ const PROJECTS = [
   //   title: "GGM Media — Instagram-style iOS app with a Firebase backend",
   //   href: "https://github.com/Fin-Murphy/GGM",
   // },
-  {
-    icon: "🔁",
-    title: "HabitHub — SwiftUI habit-tracking app",
-    href: "https://github.com/Fin-Murphy/HabitHub",
-  },
+  // {
+  //   icon: "🔁",
+  //   title: "HabitHub — SwiftUI habit-tracking app",
+  //   href: "https://github.com/Fin-Murphy/HabitHub",
+  // },
   {
     icon: "🎨",
     title: "Customite — my own orange theme for Obsidian",
