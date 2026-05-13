@@ -6,7 +6,11 @@ const ABOUT = [
   "Backend: Apple SDK, C++, Java, SwiftUI, Python",
   "Miscellaneous : SQL, Pandas, NumPy, SupaBase, Cloudflare Workers",
   "Photography, Triathlon, and Tricking",
-  " "
+  "\n  . . .",
+  // TODO: swap these dummy URLs for the real social profiles
+  { label: " > Linkedin", href: "https://www.linkedin.com/in/finnian-murphy-41a91b332/" },
+  { label: " > GitHub", href: "https://github.com/Fin-Murphy" },
+  { label: " > Instagram", href: "https://www.instagram.com/finny_murph/?hl=en" },
 ];
 
 export default function Home() {
@@ -28,10 +32,18 @@ export default function Home() {
       </div>
 
       <div className="flex flex-1 items-center justify-center px-6">
-        <ul className="max-w-4xl space-y-3 rounded-lg bg-white px-6 py-5 text-lg text-black sm:text-xl dark:bg-black dark:text-white">
-          {ABOUT.map((line) => (
-            <li key={line}>{line}</li>
-          ))}
+        <ul className="max-w-4xl space-y-3 bg-white px-6 py-5 text-lg text-black sm:text-xl dark:bg-black dark:text-white">
+          {ABOUT.map((item) =>
+            typeof item === "string" ? (
+              <li key={item}>{item}</li>
+            ) : (
+              <li key={item.label}>
+                <a href={item.href} className="underline-offset-4 hover:underline">
+                  {item.label}
+                </a>
+              </li>
+            ),
+          )}
         </ul>
       </div>
     </main>
