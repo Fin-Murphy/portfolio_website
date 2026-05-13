@@ -31,8 +31,13 @@ const PROJECTS = [
   },
   {
     icon: "🎨",
-    title: "Customite — a custom theme for Obsidian",
+    title: "Customite — my own orange theme for Obsidian",
     href: "https://github.com/Fin-Murphy/Customite-Theme",
+  },
+  {
+    icon: "🥕",
+    title: "carrotTheme — orange theme for VSCode",
+    href: "https://github.com/Fin-Murphy/carrotTheme",
   },
   // {
   //   icon: "🎓",
