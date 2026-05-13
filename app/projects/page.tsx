@@ -11,7 +11,7 @@ const PROJECTS = [
   },
   {
     icon: "📚",
-    title: "canvProj — Python script that dumps your Canvas assignments into an Obsidian Kanban board",
+    title: "canvProj — Canvas assignments -> Obsidian.md Kanban",
     href: "https://github.com/Fin-Murphy/canvProj-main",
   },
   // {
