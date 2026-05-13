@@ -17,16 +17,8 @@ export default function Home() {
     <main className="flex flex-1 flex-col items-center pt-12">
       <div className="group flex cursor-default select-none items-center gap-4 sm:gap-6 md:gap-8">
 
-        <h1 className="flex text-6xl font-semibold tracking-tight text-zinc-900 sm:text-6xl md:text-7xl dark:text-zinc-50">
-          {NAME.split("").map((char, i) => (
-            <span
-              key={i}
-              className="inline-block transition-all duration-500 ease-[steps(6,jump-end)] group-hover:-translate-y-3 group-hover:text-orange-500 dark:group-hover:text-orange-500"
-              style={{ transitionDelay: `${i * 40}ms` }}
-            >
-              {char === " " ? " " : char}
-            </span>
-          ))}
+        <h1 className="text-6xl font-semibold tracking-tight text-zinc-900 transition-colors duration-500 group-hover:text-orange-500 sm:text-6xl md:text-7xl dark:text-zinc-50">
+          {NAME}
         </h1>
       </div>
 
