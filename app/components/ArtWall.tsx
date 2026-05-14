@@ -31,6 +31,9 @@ export default function ArtWall({ images }: { images: string[] }) {
               autoPlay
               muted
               playsInline
+              preload="auto"
+              // @ts-expect-error fetchPriority is valid HTML but not in React types yet
+              fetchpriority="high"
               className="h-[480px] w-[480px] rounded-2xl object-cover"
             />
           </div>
@@ -47,6 +50,7 @@ export default function ArtWall({ images }: { images: string[] }) {
             <img
               src={`/graphic/${encodeURIComponent(file)}`}
               alt=""
+              fetchPriority="low"
               className="block h-auto w-full rounded-xl"
             />
           </div>

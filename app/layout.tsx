@@ -32,6 +32,7 @@ export default function RootLayout({
           as="video"
           href="/loader.mp4"
           type="video/mp4"
+          fetchPriority="high"
         />
       </head>
       <body className="min-h-full flex flex-col pt-12">
