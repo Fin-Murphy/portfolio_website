@@ -39,6 +39,14 @@ export default function RootLayout({
         <AsciiBackground />
         <TopBar />
         {children}
+        <video
+          src="/loader.mp4"
+          preload="auto"
+          muted
+          playsInline
+          aria-hidden="true"
+          className="pointer-events-none absolute h-0 w-0 opacity-0"
+        />
       </body>
     </html>
   );
