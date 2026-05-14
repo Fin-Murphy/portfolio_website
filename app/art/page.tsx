@@ -1,15 +1,18 @@
+import fs from "fs";
+import path from "path";
+import ArtWall from "@/app/components/ArtWall";
+
+export const dynamic = "force-dynamic";
+
 export default function ArtPage() {
+  const dir = path.join(process.cwd(), "public", "graphic");
+  const files = fs
+    .readdirSync(dir)
+    .filter((f) => /\.(jpe?g|png|gif|webp|avif)$/i.test(f));
+
   return (
-    <main className="flex flex-1 flex-col items-center pt-12">
-
-      <div className="flex flex-1 items-center justify-center px-6">
-        Hello this is art 
-      </div>
-
+    <main className="flex-1 pt-4">
+      <ArtWall images={files} />
     </main>
   );
-  
-  
-  
 }
-
