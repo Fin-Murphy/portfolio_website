@@ -50,6 +50,7 @@ export default function ArtWall({ images }: { images: string[] }) {
             <img
               src={`/graphic/${encodeURIComponent(file)}`}
               alt=""
+              loading="lazy"
               fetchPriority="low"
               className="block h-auto w-full rounded-xl"
             />
