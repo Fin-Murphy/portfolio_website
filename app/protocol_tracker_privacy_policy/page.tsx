@@ -23,6 +23,9 @@ const SECTIONS = [
   },
 ];
 
+
+
+
 export default function ProTrackPrivacyPolicyPage() {
   return (
     <main className="flex flex-1 flex-col items-center pt-12">
