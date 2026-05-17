@@ -24,7 +24,7 @@ export default function ArtWall({ images }: { images: string[] }) {
   return (
     <>
       {!ready && (
-        <div className="fixed inset-0 z-30 flex items-center justify-center">
+        <div className="pointer-events-none fixed inset-0 z-30 flex items-center justify-center">
           <div className="rounded-3xl bg-zinc-100 p-6 shadow-lg dark:bg-zinc-900">
             <video
               src="/loader.mp4"
