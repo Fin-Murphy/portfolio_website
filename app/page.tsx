@@ -23,7 +23,7 @@ export default function Home() {
       </div>
 
       <div className="flex flex-1 items-center justify-center px-6">
-        <ul className="max-w-4xl space-y-3 bg-white px-6 py-5 text-lg text-black sm:text-xl dark:bg-background dark:text-white">
+        <ul className="max-w-4xl space-y-3 bg-white/50 px-6 py-5 text-lg text-black sm:text-xl dark:bg-background/40 dark:text-white">
           {ABOUT.map((item) =>
             typeof item === "string" ? (
               <li key={item}>{item}</li>
