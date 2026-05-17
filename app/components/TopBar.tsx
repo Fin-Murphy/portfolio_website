@@ -8,7 +8,7 @@ const LINKS = [
 
 export default function TopBar() {
   return (
-    <nav className="fixed inset-x-0 top-0 z-20 flex items-center gap-7 border-b-1 border-zinc-500 bg-white/40 px-6 py-3 text-sm dark:border-zinc-900 dark:bg-background/40">
+    <nav className="fixed inset-x-0 top-0 z-20 flex items-center gap-7 border-b-1 border-zinc-500 bg-white/60 px-6 py-3 text-sm dark:border-white dark:bg-background/60">
       {LINKS.map(({ label, href }) => (
         <Link
           key={href}
