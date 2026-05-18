@@ -2,7 +2,10 @@ const ARTICLES = [
   { title: "Teach Yourself Programming in Ten Years - Peter Norvig", href: "https://www.norvig.com/21-days.html" },
   { title: "In the Beginning was the Command Line - Neal Stephenson", href: "https://smorgasborg.artlung.com/C_R_Y_P_T_O_N_O_M_I_C_O_N/" },
   { title: "Thoughts on slowing the fuck down - Mario Zechner", href: "https://mariozechner.at/posts/2026-03-25-thoughts-on-slowing-the-fuck-down" },
+  { title: "The 18 mistakes that kill startups - Paul Graham", href: "https://www.paulgraham.com/startupmistakes.html" },
 ];
+
+
 
 export default function FavArticlesPage() {
   return (
