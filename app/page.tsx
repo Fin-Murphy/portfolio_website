@@ -6,7 +6,7 @@ const ABOUT = [
   "Math + CS @ Georgetown University (CAS '28)",
   { text: "Frontend: Next.js, React, HTML + CSS + Tailwind", href: "/frontend" },
   { text: "Backend: Apple SDK, C++, Java, SwiftUI, Python", href: "/backend" },
-  { text: "Miscellaneous: SupaBase, Cloudflare Workers / AI, Vercel", href: "/misc" },
+  { text: "Assorted: SupaBase, Cloudflare Workers / AI, Vercel", href: "/misc" },
   { text: "Photography, Triathlon, and Tricking", href: "/interests" },
   { label: " > Linkedin", href: "https://www.linkedin.com/in/finnian-murphy-41a91b332/" },
   { label: " > GitHub", href: "https://github.com/Fin-Murphy" },
@@ -39,14 +39,13 @@ export default function Home() {
             }
             if ("text" in item) {
               return (
-                <li key={item.text} className="flex items-center gap-4">
-                  <span className="flex-1">{item.text}</span>
+                <li key={item.text}>
                   <Link
                     href={item.href}
-                    aria-label={`More about ${item.text}`}
-                    className="shrink-0 underline-offset-4 hover:text-orange-500 hover:underline"
+                    className="flex items-center gap-4 underline-offset-4 hover:text-orange-500 hover:underline"
                   >
-                    {" >"}
+                    <span className="flex-1">{item.text}</span>
+                    <span className="shrink-0">{" >"}</span>
                   </Link>
                 </li>
               );

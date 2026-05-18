@@ -29,6 +29,14 @@ export default function InterestsPage() {
           <p>Drawing</p>
           <p>Playing the guitar (poorly)</p>
           <p>Playing the piano (even worse)</p>
+          <p>
+            <Link
+              href="/fav-articles"
+              className="underline-offset-4 hover:text-orange-500 hover:underline"
+            >
+              What I&apos;m Reading
+            </Link>
+          </p>
         </div>
       </div>
     </main>
