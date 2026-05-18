@@ -7,13 +7,13 @@ export default function InterestsPage() {
         <div className="max-w-5xl bg-white/40 space-y-6 px-6 py-5 text-lg text-black sm:text-xl dark:bg-background/40 dark:text-white">
           <h1 className="mb-4 text-2xl font-semibold">Some of my Favorite Things</h1>
           <p>Triathlon
-            <Link
+            {/* <Link
               href={"https://youtube.com/@finnian.murphy"}
               aria-label={"  -> Training Jornal"}
               className="shrink-0 underline-offset-4 text-sm hover:text-orange-500 hover:underline"
             >
               {"  - -- -> Training Journal"}
-            </Link>
+            </Link> */}
 
           </p>
           <p>Hybrid Training</p>
