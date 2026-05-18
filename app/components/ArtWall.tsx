@@ -17,7 +17,7 @@ export default function ArtWall({ images }: { images: string[] }) {
 
   useEffect(() => {
     setTiles(shuffle(images));
-    const t = setTimeout(() => setReady(true), 5400);
+    const t = setTimeout(() => setReady(true), 4500);
     return () => clearTimeout(t);
   }, [images]);
 
