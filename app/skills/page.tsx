@@ -4,6 +4,7 @@ const SKILLS = [
   { text: "Frontend", href: "/frontend" },
   { text: "Backend", href: "/backend" },
   { text: "Frameworks", href: "/misc" },
+  { text: "AI ", href: "/ai" },
   { text: "Hobbies", href: "/interests" },
 ];
 

@@ -7,7 +7,6 @@ export default function FrontendPage() {
           <p></p>
           <p> HTML + CSS + Tailwind : Portfolio websites, product landing pages </p>
           <p> Next.js, React: Mobile applications, vercel deployments (also for portfolio) </p>
-          <p> Next.js, React: Mobile applications, vercel deployments (also for portfolio) </p>
         </div>
       </div>
     </main>
