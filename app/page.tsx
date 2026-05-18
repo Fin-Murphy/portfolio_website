@@ -7,7 +7,7 @@ const ABOUT = [
   { text: "Frontend: Next.js, React, HTML + CSS + Tailwind", href: "/frontend" },
   { text: "Backend: Apple SDK, C++, Java, SwiftUI, Python", href: "/backend" },
   { text: "Assorted: SupaBase, Cloudflare Workers / AI, Vercel", href: "/misc" },
-  { text: "Photography, Triathlon, and Tricking", href: "/interests" },
+  { text: "Interests: Art, Athletics, etc > ", href: "/interests" },
   { label: " > Linkedin", href: "https://www.linkedin.com/in/finnian-murphy-41a91b332/" },
   { label: " > GitHub", href: "https://github.com/Fin-Murphy" },
   { label: " > Instagram", href: "https://www.instagram.com/finny_murph/?hl=en" },
