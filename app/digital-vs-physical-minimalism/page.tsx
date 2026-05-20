@@ -26,9 +26,13 @@ export default function DigitalVsPhysicalMinimalismPage() {
             p    {color: red;}
           </style> */}
 
+          <p className="indent-15">
+            This article is unfinished.
+          </p>
+
 
           <p className="indent-8">
-            The idea that you should not place excessive time and attention on material possessions is a not new, but over the past few years the Minimalist philosophy has become more and more prominent in the public eye. Copious amounts of YouTube videos, blog posts, and Reddit threads have been made on the topic by creators touting methodologies and practices that purport to reduce the clutter in your home, increase your productivity, and even maximize your cognitive abilities. Minimalism has a root (or several) in almost every religion and belief system you could name - Christianity, Taoism, Buddhism, Shinto, Stoicism, etc. etc, and while it's experiencing a surge in popularity right now, Minimalism is as old as the hills – but what is not as old as the hills are the magical rectangles that we all now have in our pockets. I'm not sure exactly when smartphones became ubiquitous (my parents managed to hold out getting theirs till mid-2015), but what is certain is that we are all incredibly connected to the outside world through the multiple devices most of us maintain and use every day.
+            The idea that you should not place excessive time and attention on material possessions is a not new, but over the past few years the Minimalist philosophy has become more and more prominent in the public eye. Copious amounts of YouTube videos, blog posts, and Reddit threads have been made on the topic by creators touting methodologies and practices that purport to reduce the clutter in your home, increase your productivity, and even maximize your cognitive abilities. While it's experiencing a surge in popularity right now, Minimalism is as old as the hills – but what is not as old as the hills are the phones that we all now have in our pockets. I'm not sure exactly when smartphones became ubiquitous (my parents managed to hold out getting theirs till mid-2015), but what is certain is that we are all incredibly connected to the outside world through the multiple devices most of us maintain and use every day.
           </p>
 
           <p className="indent-8">
@@ -67,7 +71,7 @@ export default function DigitalVsPhysicalMinimalismPage() {
 
           <p>. . . </p>
 
-          <p> . . . . Unfortunately, I haven't finished this article and probably never will. I wrote the whole thing on a flight and once I got off I completely forgot about it, so hopefully someone else finds this and is inspired by it. Either way, it's out of my hands now. . . </p>
+          <p> . . . . Unfortunately, I haven't finished this article and probably never will. I wrote the whole draft on a flight and once I got off I completely forgot about it, so hopefully someone else finds this and is inspired by it. Either way, it's out of my hands now. . . </p>
 
         </article>
       </div>
