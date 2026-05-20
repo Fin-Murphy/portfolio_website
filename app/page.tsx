@@ -10,7 +10,7 @@ const ABOUT = [
   { text: "Interests: Art, Athletics, etc > ", href: "/interests" },
   { label: " > Linkedin", href: "https://www.linkedin.com/in/finnian-murphy-41a91b332/" },
   { label: " > GitHub", href: "https://github.com/Fin-Murphy" },
-  { label: " > Instagram", href: "https://www.instagram.com/finny_murph/?hl=en" },
+  // { label: " > Instagram", href: "https://www.instagram.com/finny_murph/?hl=en" },
 ];
 
 export default function Home() {
