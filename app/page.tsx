@@ -26,13 +26,11 @@ export default function Home() {
       </div>
 
 
-        <h1 className="text-xl font-semibold tracking-tight text-zinc-900 transition-colors duration-500 group-hover:text-orange-500 md:text-3xl dark:text-zinc-50">
-          live to build!
-        </h1>
+
 
 
       <div className="flex flex-1 items-center justify-center px-6">
-        <ul className="max-w-4xl space-y-5 bg-white/50 px-13 py-5 text-lg text-black sm:text-xl dark:bg-background/40 dark:text-white">
+        <ul className="max-w-4xl space-y-5 bg-white/40 px-13 py-5 text-lg text-black sm:text-xl dark:bg-background/40 dark:text-white">
           {ABOUT.map((item) => {
             if (typeof item === "string") {
               return <li key={item}>{item}</li>;
@@ -60,6 +58,7 @@ export default function Home() {
           })}
         </ul>
       </div>
+
     </main>
   );
 }
