@@ -20,21 +20,21 @@ export default function DigitalVsPhysicalMinimalismPage() {
                     </p>
 
                     <h1>
-                        THE FIRST REASON!
+                        THE FIRST REASON
                     </h1>
                     <p>
                         Media is evil firstly because it weakens your brain. Consuming the product of other's minds can be wonderful, mind expanding, and informative if the media you are consuming has these qualities. However, if the media you are consuming is entertaining, short-form, mindless, and substance-less then you are adapting your mind to consume this type of content. TikTok? Evil. Instagram? Evil. Youtube shorts? Evil. Any type of content that is short form is designed for the sole purpose of keeping you entrenched in front of your screen to maximize the number of ads that can be crammed into your brain.
                     </p>
 
                     <h1>
-                        THE SECOND REASON!
+                        THE SECOND REASON
                     </h1>
                     <p>
                         Consuming other people's media means that you are not creating your own. This is not an argument from the cant of self-centered maximization of your monetary power; au contraire, it is for the betterment of society as a whole. An entire society that consumes is doomed to fall into the hands of entities that retain the wherewithal to produce; we see this with the tech giants of Facebook, Instagram, and TikTok. These companies are not evil, they are simply looking to turn a profit. However, the effect that they have on your brain _is_ evil. Forget watching other people's content, create your own. If we all made content, the limited amount of content we did consume would be better by virtue of a larger number of producers competing and creating the best possible product.
                     </p>
 
                     <h1>
-                        THE THIRD REASON!
+                        THE THIRD REASON
                     </h1>
 
                     <p>
@@ -42,7 +42,7 @@ export default function DigitalVsPhysicalMinimalismPage() {
                     </p>
 
                     <h1>
-                        IN SUMMATION!
+                        IN SUMMATION
                     </h1>
 
                     <p>
