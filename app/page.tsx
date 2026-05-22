@@ -3,7 +3,7 @@ import Link from "next/link";
 const NAME = "Finnian Murphy";
 
 const ABOUT = [
-  "I'm Finnian Murphy, a Math and CS double major at Georgetown. I ship native iOS apps and build AI-integrated full-stack tools with Supabase, OpenAI, and Cloudflare Workers.",
+  "I'm Fin, a Math and CS double major at Georgetown. I ship native iOS apps and build AI-integrated full-stack tools with Supabase, OpenAI, and Cloudflare Workers.",
   "Build what people AND agents want.",
   { text: "Frontend: Next.js, React, HTML + CSS + Tailwind", href: "/frontend" },
   { text: "Backend: Apple SDK, C++, Java, SwiftUI, Python", href: "/backend" },
