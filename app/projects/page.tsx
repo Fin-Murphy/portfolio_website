@@ -6,7 +6,7 @@ const PROJECTS = [
   },
   {
     icon: "🔁",
-    title: "Protocol Tracker - Proof of concept for Reverb",
+    title: "Protocol Tracker - Dog food for Reverb",
     href: "https://github.com/Fin-Murphy/Protocol-Tracker",
   },
     {
