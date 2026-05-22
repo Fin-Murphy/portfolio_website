@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# portfolio
 
-## Getting Started
+Source for my personal site — a monospace, dark-by-default portfolio with a live ASCII wave background that responds to the cursor.
 
-First, run the development server:
+Live: finnian-murphy.me
+
+## Stack
+
+- **Next.js 16** (App Router) + **React 19**
+- **TypeScript** (strict)
+- **Tailwind CSS v4** — v4 single-import setup with `@theme inline` tokens in `app/globals.css`; no `tailwind.config.*` file
+- **Geist Mono** via `next/font/google` (the whole site is monospace by design)
+- Deployed on **Vercel**
+
+## Notable bits
+
+- `app/lib/waveField.ts` — pure function that renders a grid of density characters from summed sine waves plus a cursor-halo term. Pure ⇒ the first frame is deterministic and SSR-safe.
+- `app/hooks/useAnimationFrame.ts` — `requestAnimationFrame` loop throttled to a target fps, accumulating elapsed time from clamped per-frame deltas so backgrounded tabs don't fast-forward on return. Reads its callback from a ref so the loop never restarts on re-render.
+- `app/components/AsciiBackground.tsx` — fixed `-z-10` full-viewport layer that measures one monospace cell from an invisible probe span, sizes a `cols × rows` grid to the window, tracks the pointer in cell coordinates, and writes `waveField(...)` output to a `<pre>` on each tick.
+
+The split is intentional: visuals live in `waveField.ts`, timing/lifecycle in `useAnimationFrame.ts`, DOM/measurement/pointer plumbing in `AsciiBackground.tsx`.
+
+## Running locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build   # production build
+npm run start   # serve the production build
+npm run lint    # ESLint (eslint-config-next, flat config)
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+No test runner is configured.
 
-## Learn More
+## Layout
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+  layout.tsx              # root layout — loads Geist Mono, renders <AsciiBackground /> + <TopBar />
+  page.tsx                # home (name + about list)
+  globals.css             # Tailwind v4 entry + theme tokens
+  components/             # TopBar, AsciiBackground, ArtWall
+  hooks/useAnimationFrame.ts
+  lib/waveField.ts
+  <route>/page.tsx        # individual sections (projects, art, articles, etc.)
+public/
+  graphic/                # art / image assets
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+No license — code is here to read, not to reuse. If you want to use a piece of it, ask.
