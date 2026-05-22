@@ -3,7 +3,8 @@ import Link from "next/link";
 const NAME = "Finnian Murphy";
 
 const ABOUT = [
-  "Math + CS @ Georgetown University (CAS '28)",
+  "I'm Finnian Murphy, a Math and CS double major at Georgetown. I ship native iOS apps and build AI-integrated full-stack tools with Supabase, OpenAI, and Cloudflare Workers.",
+  "Build what people AND agents want.",
   { text: "Frontend: Next.js, React, HTML + CSS + Tailwind", href: "/frontend" },
   { text: "Backend: Apple SDK, C++, Java, SwiftUI, Python", href: "/backend" },
   { text: "Assorted: SupaBase, Cloudflare Workers / AI, Vercel", href: "/misc" },
@@ -15,7 +16,7 @@ const ABOUT = [
 
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col items-center space-y-8 pt-12">
+    <main className="flex flex-1 flex-col items-center space-y-10 pt-12">
       <div className="group flex cursor-default select-none items-center gap-4 sm:gap-6 md:gap-8">
         <h1 className="flex text-6xl font-semibold tracking-tight text-zinc-900 sm:text-6xl md:text-7xl dark:text-zinc-50">
           {NAME.split("").map((char, i) => (
@@ -32,7 +33,7 @@ export default function Home() {
 
 
       <div className="flex flex-1 items-center justify-center px-6">
-        <ul className="max-w-4xl space-y-5 bg-white/40 px-13 py-5 text-lg text-black sm:text-xl dark:bg-background/40 dark:text-white">
+        <ul className="max-w-4xl space-y-6 bg-white/40 px-13 py-6 text-lg text-black sm:text-xl dark:bg-background/40 dark:text-white">
           {ABOUT.map((item) => {
             if (typeof item === "string") {
               return <li key={item}>{item}</li>;
