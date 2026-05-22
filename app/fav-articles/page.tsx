@@ -4,6 +4,7 @@ const ARTICLES = [
   { title: "Thoughts on slowing the fuck down - Mario Zechner", href: "https://mariozechner.at/posts/2026-03-25-thoughts-on-slowing-the-fuck-down" },
   { title: "The 18 mistakes that kill startups - Paul Graham", href: "https://www.paulgraham.com/startupmistakes.html" },
   { title: "The integral of intentionality - Chris Paik", href: "https://docs.google.com/document/d/1W1XARzS8KTI6YWhYNPlryWE7j2mY8ntSRLz1O8NC53E/edit?pli=1&tab=t.0" },
+  { title: "Hackers and Painters - Paul Graham", href: "https://www.paulgraham.com/hp.html" },
 
 ];
 
