@@ -24,6 +24,11 @@ const PROJECTS = [
     title: "canvProj - Canvas assignments -> Obsidian.md Kanban",
     href: "https://github.com/Fin-Murphy/canvProj-main",
   },
+  {
+    icon: "🌊",
+    title: "portfolio - this site! pretty cool huh?",
+    href: "https://github.com/Fin-Murphy/portfolio_website",
+  },
   // {
   //   icon: "🧠",
   //   title: "scatterbrain — terminal-based productivity concept (the ScatterCLI prototype)",

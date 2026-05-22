@@ -1,6 +1,6 @@
 # portfolio
 
-Source for my personal site — a monospace, dark-by-default portfolio with a live ASCII wave background that responds to the cursor.
+Source for my personal site
 
 Live: finnian-murphy.me
 
@@ -14,11 +14,8 @@ Live: finnian-murphy.me
 
 ## Notable bits
 
-- `app/lib/waveField.ts` — pure function that renders a grid of density characters from summed sine waves plus a cursor-halo term. Pure ⇒ the first frame is deterministic and SSR-safe.
-- `app/hooks/useAnimationFrame.ts` — `requestAnimationFrame` loop throttled to a target fps, accumulating elapsed time from clamped per-frame deltas so backgrounded tabs don't fast-forward on return. Reads its callback from a ref so the loop never restarts on re-render.
-- `app/components/AsciiBackground.tsx` — fixed `-z-10` full-viewport layer that measures one monospace cell from an invisible probe span, sizes a `cols × rows` grid to the window, tracks the pointer in cell coordinates, and writes `waveField(...)` output to a `<pre>` on each tick.
-
-The split is intentional: visuals live in `waveField.ts`, timing/lifecycle in `useAnimationFrame.ts`, DOM/measurement/pointer plumbing in `AsciiBackground.tsx`.
+- `app/lib/waveField.ts` — pure function that renders a grid of density characters from summed sine waves plus a cursor-halo term.
+- `app/hooks/useAnimationFrame.ts` — `requestAnimationFrame` loop throttled to a target fps
 
 ## Running locally
 
