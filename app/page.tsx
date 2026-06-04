@@ -3,11 +3,11 @@ import Link from "next/link";
 const NAME = "Finnian Murphy";
 
 const ABOUT = [
-  "I'm Fin, a Math and CS double major at Georgetown. I ship native iOS apps and build AI-integrated full-stack tools with Supabase, OpenAI, and Cloudflare Workers. Build what people AND agents want.",
-  { text: "Frontend: Next.js, React, HTML + CSS + Tailwind", href: "/skills#frontend" },
-  { text: "Backend: Apple SDK, C++, Java, SwiftUI, Python", href: "/skills#backend" },
-  { text: "Frameworks: SupaBase, Cloudflare Workers / AI, Vercel", href: "/skills#frameworks" },
-  { text: "Hobbies: Art, Athletics, etc > ", href: "/skills#hobbies" },
+  "I'm Fin, a Math and CS double major at Georgetown. I build native iOS apps, AI-integrated full-stack tools, and CLI utils. Build what people AND agents want.",
+  { text: "= Frontend: Next.js, React, HTML + CSS + Tailwind", href: "/skills#frontend" },
+  { text: "= Backend: Apple SDK, C++, Java, SwiftUI, Python", href: "/skills#backend" },
+  { text: "= Frameworks: SupaBase, Cloudflare Workers / AI, Vercel", href: "/skills#frameworks" },
+  { text: "= Personal: Art, Athletics, etc ", href: "/skills#hobbies" },
   { label: " > Linkedin", href: "https://www.linkedin.com/in/finnian-murphy-41a91b332/" },
   { label: " > GitHub", href: "https://github.com/Fin-Murphy" },
   // { label: " > Instagram", href: "https://www.instagram.com/finny_murph/?hl=en" },
