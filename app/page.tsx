@@ -3,8 +3,7 @@ import Link from "next/link";
 const NAME = "Finnian Murphy";
 
 const ABOUT = [
-  "I'm Fin, a Math and CS double major at Georgetown. I ship native iOS apps and build AI-integrated full-stack tools with Supabase, OpenAI, and Cloudflare Workers.",
-  "Build what people AND agents want.",
+  "I'm Fin, a Math and CS double major at Georgetown. I ship native iOS apps and build AI-integrated full-stack tools with Supabase, OpenAI, and Cloudflare Workers. Build what people AND agents want.",
   { text: "Frontend: Next.js, React, HTML + CSS + Tailwind", href: "/skills#frontend" },
   { text: "Backend: Apple SDK, C++, Java, SwiftUI, Python", href: "/skills#backend" },
   { text: "Frameworks: SupaBase, Cloudflare Workers / AI, Vercel", href: "/skills#frameworks" },
@@ -34,6 +33,23 @@ export default function Home() {
 
       <div className="flex flex-1 items-center justify-center px-6">
         <ul className="max-w-4xl space-y-6 bg-white/40 px-13 py-6 text-lg text-black sm:text-xl dark:bg-background/40 dark:text-white">
+          <li className="flex items-center gap-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="size-5 shrink-0"
+              aria-hidden="true"
+            >
+              <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>Washington, DC</span>
+          </li>
           {ABOUT.map((item) => {
             if (typeof item === "string") {
               return <li key={item}>{item}</li>;
