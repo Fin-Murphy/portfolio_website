@@ -1,0 +1,49 @@
+# Finnian Murphy — Software Engineer
+
+> Fin Murphy is a Math + Computer Science double major at Georgetown University (Washington, DC) who ships production software across the stack: native iOS apps, AI-integrated full-stack tools, and command-line utilities. His guiding principle is to "build what people AND agents want" — software designed to be used comfortably by humans and consumed cleanly by machines. Available for freelance, contract, and internship engagements.
+
+## Summary
+
+- **Role:** Full-stack & native iOS software engineer; AI-integrated product builder
+- **Education:** B.S. Mathematics & Computer Science, Georgetown University
+- **Location:** Washington, DC (open to remote)
+- **Strengths:** End-to-end product delivery — from low-level systems (C++ data structures and graph algorithms from scratch) to polished, deployed web and mobile apps
+- **Working style:** Agile/Scrum, fast iteration on Vercel, AI-assisted development loops (Claude Code)
+- **Links:** [GitHub](https://github.com/Fin-Murphy) · [LinkedIn](https://www.linkedin.com/in/finnian-murphy-41a91b332/)
+
+## Skills
+
+- **Frontend:** Next.js, React, TypeScript, HTML, CSS, Tailwind CSS — portfolio sites, product landing pages, deployed web apps
+- **Backend & Languages:** Swift & SwiftUI (native iOS), Apple SDK, C++ (low-level systems, B-trees / red-black / binary trees built from scratch, graph algorithms and optimization), Java (web apps), Python (microapps, data analysis)
+- **AI Engineering:** OpenAI API, OpenAI TTS / speech synthesis, Cloudflare Workers AI for data processing and organization, AI-assisted development workflows
+- **Frameworks & Infra:** Cloudflare Workers, Supabase, Vercel, multithreaded and systems-level design, advanced OOP, Agile/Scrum
+- **Tooling:** Xcode, VS Code
+
+## Projects
+
+- [Reverb](https://github.com/Fin-Murphy/Reverb_Public): AI-powered productivity application
+- [Protocol Tracker](https://github.com/Fin-Murphy/Protocol-Tracker): native iOS app; production dog-fooding of Reverb
+- [Bug Zapper](https://github.com/Fin-Murphy/Bug-Zapper): browser extension for removing annoying page elements
+- [ScatterCLI](https://github.com/Fin-Murphy/ScatterCLI): shell interface integrating with Obsidian Kanban boards
+- [canvProj](https://github.com/Fin-Murphy/canvProj-main): pipeline turning Canvas assignments into Obsidian.md Kanban cards
+- [Portfolio site](https://github.com/Fin-Murphy/portfolio_website): this site — Next.js 16 + React 19 + Tailwind v4 with a custom animated ASCII wave-field background rendered from a pure sine-wave function
+- [Customite](https://github.com/Fin-Murphy/Customite-Theme): custom orange theme for Obsidian
+- [carrotTheme](https://github.com/Fin-Murphy/carrotTheme): orange theme for VS Code
+
+## Pages
+
+- [Home](https://finnian-murphy.me/): intro, location, and skills overview
+- [Skills](https://finnian-murphy.me/skills): detailed breakdown of frontend, backend, frameworks, and AI work
+- [Projects](https://finnian-murphy.me/projects): shipped projects with source repositories
+- [Art](https://finnian-murphy.me/art): photography and drawing portfolio
+- [Thoughts](https://finnian-murphy.me/thoughts): short technical notes and learnings
+
+## Optional
+
+- [What I'm Reading](https://finnian-murphy.me/fav-articles): curated articles
+- [What I'm Writing](https://finnian-murphy.me/my-articles): longer-form writing
+- Personal interests: triathlon, hybrid training, photography, drawing, guitar, piano
+
+## Contact
+
+Open to freelance, contract, and full-time software engineering work. Best reached via [LinkedIn](https://www.linkedin.com/in/finnian-murphy-41a91b332/) or [GitHub](https://github.com/Fin-Murphy).
