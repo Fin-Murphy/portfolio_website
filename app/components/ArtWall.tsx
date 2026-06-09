@@ -25,7 +25,7 @@ export default function ArtWall({ images }: { images: string[] }) {
     <>
       {!ready && (
         <div className="pointer-events-none fixed inset-0 z-30 flex items-center justify-center">
-          <div className="rounded-3xl bg-zinc-100 p-6 shadow-lg dark:bg-zinc-900">
+          <div className="rounded-3xl bg-zinc-100 p-4 shadow-lg sm:p-6 dark:bg-zinc-900">
             <video
               src="/loader.mp4"
               autoPlay
@@ -34,7 +34,7 @@ export default function ArtWall({ images }: { images: string[] }) {
               preload="auto"
               // @ts-expect-error fetchPriority is valid HTML but not in React types yet
               fetchpriority="high"
-              className="h-[480px] w-[480px] rounded-2xl object-cover"
+              className="aspect-square w-[min(70vw,70vh,480px)] rounded-2xl object-cover"
             />
           </div>
         </div>

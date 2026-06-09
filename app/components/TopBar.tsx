@@ -5,8 +5,6 @@ const LINKS = [
   { label: "Skills", href: "/skills" },
   { label: "Projects", href: "/projects" },
   { label: "Art", href: "/art" },
-  { label: "Thoughts", href: "/thoughts" },
-
 ];
 
 export default function TopBar() {

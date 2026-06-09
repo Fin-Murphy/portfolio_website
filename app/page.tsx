@@ -1,6 +1,8 @@
+import { Fragment } from "react";
 import Link from "next/link";
 
 const NAME = "Finnian Murphy";
+const NAME_WORDS = NAME.split(" ");
 
 const ABOUT = [
   "I'm Fin, a Math and CS double major at Georgetown. I build native iOS apps, AI-integrated full-stack tools, and CLI utils. Build what people AND agents want.",
@@ -17,16 +19,27 @@ export default function Home() {
   return (
     <main className="flex flex-1 flex-col items-center space-y-10 pt-12">
       <div className="group flex cursor-default select-none items-center gap-4 sm:gap-6 md:gap-8">
-        <h1 className="flex text-6xl font-semibold tracking-tight text-zinc-900 sm:text-6xl md:text-7xl dark:text-zinc-50">
-          {NAME.split("").map((char, i) => (
-            <span
-              key={i}
-              className="inline-block transition-all duration-500 ease-[steps(6,jump-end)] group-hover:-translate-y-1 group-hover:text-orange-500 dark:group-hover:text-orange-400"
-              style={{ transitionDelay: `${i * 30}ms` }}
-            >
-              {char === " " ? " " : char}
-            </span>
-          ))}
+        <h1 className="flex flex-col items-center text-6xl font-semibold tracking-tight text-zinc-900 sm:flex-row sm:gap-[0.25em] sm:text-6xl md:text-7xl dark:text-zinc-50">
+          {NAME_WORDS.map((word, wordIndex) => {
+            // Continuous index across the whole name (incl. the original space)
+            // so the hover ripple stays seamless across the line break.
+            const offset =
+              NAME_WORDS.slice(0, wordIndex).reduce((n, w) => n + w.length, 0) +
+              wordIndex;
+            return (
+              <span key={word} className="flex">
+                {word.split("").map((char, i) => (
+                  <span
+                    key={i}
+                    className="inline-block transition-all duration-500 ease-[steps(6,jump-end)] desktop:group-hover:-translate-y-1 desktop:group-hover:text-orange-500 dark:desktop:group-hover:text-orange-400"
+                    style={{ transitionDelay: `${(offset + i) * 30}ms` }}
+                  >
+                    {char}
+                  </span>
+                ))}
+              </span>
+            );
+          })}
         </h1>
       </div>
 
@@ -52,11 +65,24 @@ export default function Home() {
           </li>
           {ABOUT.map((item) => {
             if (typeof item === "string") {
-              return <li key={item}>{item}</li>;
+              return (
+                <Fragment key={item}>
+                  <li>{item}</li>
+                  <li className="md:hidden">
+                    <Link
+                      href="/skills"
+                      className="flex items-center gap-4 underline-offset-4 hover:text-orange-500 hover:underline"
+                    >
+                      <span className="flex-1">= Skills</span>
+                      <span className="shrink-0">{" >"}</span>
+                    </Link>
+                  </li>
+                </Fragment>
+              );
             }
             if ("text" in item) {
               return (
-                <li key={item.text}>
+                <li key={item.text} className="hidden md:block">
                   <Link
                     href={item.href}
                     className="flex items-center gap-4 underline-offset-4 hover:text-orange-500 hover:underline"

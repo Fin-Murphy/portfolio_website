@@ -12,6 +12,9 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Gate hover-driven interactivity to devices with a real mouse pointer. */
+@custom-variant desktop (@media (hover: hover) and (pointer: fine));
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;

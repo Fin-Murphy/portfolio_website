@@ -36,8 +36,11 @@ export default function AsciiBackground() {
     return () => window.removeEventListener("resize", measure);
   }, []);
 
-  // Track the cursor in cell coordinates — plumbing for future interactivity.
+  // Track the cursor in cell coordinates to drive the halo — but only on devices
+  // with a real mouse pointer. Touch devices have no hover, so we leave the field
+  // ambient (mouse stays null ⇒ no halo) rather than reacting to taps.
   useEffect(() => {
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
     const onMove = (e: PointerEvent) => {
       const { w, h } = cellRef.current;
       mouseRef.current = { col: Math.floor(e.clientX / w), row: Math.floor(e.clientY / h) };
