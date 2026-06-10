@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <main className="flex flex-1 flex-col items-center space-y-1 pt-6 sm:space-y-10 sm:pt-12">
       <div className="group flex cursor-default select-none items-center gap-4 sm:gap-6 md:gap-8">
-        <h1 className="flex flex-col items-center text-5xl font-semibold tracking-tight text-zinc-900 sm:flex-row sm:gap-[0.25em] sm:text-6xl md:text-7xl dark:text-zinc-50">
+        <h1 className="flex flex-col items-center text-5xl font-semibold tracking-tight text-zinc-900 sm:flex-row sm:gap-[0.6em] sm:text-6xl md:text-7xl dark:text-zinc-50">
           {NAME_WORDS.map((word, wordIndex) => {
             // Continuous index across the whole name (incl. the original space)
             // so the hover ripple stays seamless across the line break.
@@ -31,7 +31,7 @@ export default function Home() {
                 {word.split("").map((char, i) => (
                   <span
                     key={i}
-                    className="inline-block transition-all duration-500 ease-[steps(6,jump-end)] desktop:group-hover:-translate-y-1 desktop:group-hover:text-orange-500 dark:desktop:group-hover:text-orange-400"
+                    className="inline-block transition-all duration-500 ease-[steps(6,jump-end)] group-hover:-translate-y-1 group-hover:text-orange-500 dark:group-hover:text-orange-400"
                     style={{ transitionDelay: `${(offset + i) * 30}ms` }}
                   >
                     {char}
