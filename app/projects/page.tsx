@@ -14,6 +14,11 @@ const PROJECTS = [
     title: "Bug Zapper - extension for deleting annoying page elements",
     href: "https://github.com/Fin-Murphy/Bug-Zapper",
   },
+    {
+    icon: "💔",
+    title: "Antilikinator - hides already-liked Instagram posts from your feed",
+    href: "https://github.com/Fin-Murphy/AntiLikinator",
+  },
   {
     icon: "⌨️",
     title: "ScatterCLI - shell interface with Obsidian Kanban",
