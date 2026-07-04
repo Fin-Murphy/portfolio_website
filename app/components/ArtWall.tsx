@@ -11,10 +11,7 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-// Roughly one screenful at the widest column count; the wall stays hidden
-// until these have loaded, so the reveal never shows half-loaded tiles.
-const REVEAL_COUNT = 12;
-const MIN_LOADER_MS = 4200;
+const LOADER_MS = 4200;
 
 function preloadImage(src: string): Promise<void> {
   return new Promise((resolve) => {
@@ -27,32 +24,29 @@ function preloadImage(src: string): Promise<void> {
 
 export default function ArtWall({ images }: { images: string[] }) {
   const [tiles, setTiles] = useState<string[]>(images);
+  // Tiles only render once their image is fully cached, so nothing ever
+  // paints half-loaded; they appear top-down as the sequential preload runs.
+  const [loadedCount, setLoadedCount] = useState(0);
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const shuffled = shuffle(images);
     setTiles(shuffled);
+    setLoadedCount(0);
 
     let cancelled = false;
-    const minDelay = new Promise((r) => setTimeout(r, MIN_LOADER_MS));
-    const srcOf = (file: string) => `/graphic/${encodeURIComponent(file)}`;
-
     (async () => {
-      for (const file of shuffled.slice(0, REVEAL_COUNT)) {
+      for (let i = 0; i < shuffled.length; i++) {
+        await preloadImage(`/graphic/${encodeURIComponent(shuffled[i])}`);
         if (cancelled) return;
-        await preloadImage(srcOf(file));
-      }
-      await minDelay;
-      if (cancelled) return;
-      setReady(true);
-      for (const file of shuffled.slice(REVEAL_COUNT)) {
-        if (cancelled) return;
-        await preloadImage(srcOf(file));
+        setLoadedCount(i + 1);
       }
     })();
 
+    const t = setTimeout(() => setReady(true), LOADER_MS);
     return () => {
       cancelled = true;
+      clearTimeout(t);
     };
   }, [images]);
 
@@ -79,14 +73,12 @@ export default function ArtWall({ images }: { images: string[] }) {
           ready ? "opacity-100" : "opacity-0"
         }`}
       >
-        {tiles.map((file) => (
+        {tiles.slice(0, loadedCount).map((file) => (
           <div key={file} className="mb-6 break-inside-avoid">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={`/graphic/${encodeURIComponent(file)}`}
               alt=""
-              loading="lazy"
-              fetchPriority="low"
               className="block h-auto w-full rounded-xl"
             />
           </div>
