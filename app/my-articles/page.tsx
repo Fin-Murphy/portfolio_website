@@ -1,6 +1,7 @@
 const ARTICLES = [
   { title: "Digital vs. Physical Minimalism", href: "/digital-vs-physical-minimalism" },
   { title: "Media is evil. Why?", href: "/media-is-evil" },
+  { title: "Balancing Handwritten and LLM Code", href: "/balancing-handwritten-and-llm-code" },
 ];
 
 
