@@ -13,6 +13,14 @@ function shuffle<T>(arr: T[]): T[] {
 
 const LOADER_MS = 4200;
 
+// Mirrors Tailwind's default sm/md/lg breakpoints.
+function columnCount(width: number): number {
+  if (width >= 1024) return 5;
+  if (width >= 768) return 4;
+  if (width >= 640) return 3;
+  return 2;
+}
+
 function preloadImage(src: string): Promise<void> {
   return new Promise((resolve) => {
     const img = new Image();
@@ -26,8 +34,11 @@ export default function ArtWall({ images }: { images: string[] }) {
   const [tiles, setTiles] = useState<string[]>(images);
   // Tiles only render once their image is fully cached, so nothing ever
   // paints half-loaded; they appear top-down as the sequential preload runs.
+  // They are dealt round-robin into fixed flex columns rather than CSS
+  // `columns`, which re-balances (and visibly shifts) every tile on append.
   const [loadedCount, setLoadedCount] = useState(0);
   const [ready, setReady] = useState(false);
+  const [cols, setCols] = useState(2);
 
   useEffect(() => {
     const shuffled = shuffle(images);
@@ -50,6 +61,13 @@ export default function ArtWall({ images }: { images: string[] }) {
     };
   }, [images]);
 
+  useEffect(() => {
+    const update = () => setCols(columnCount(window.innerWidth));
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
   return (
     <>
       {!ready && (
@@ -69,18 +87,24 @@ export default function ArtWall({ images }: { images: string[] }) {
         </div>
       )}
       <div
-        className={`columns-2 gap-6 px-12 transition-opacity duration-300 ease-out sm:columns-3 md:columns-4 lg:columns-5 ${
+        className={`flex gap-6 px-12 transition-opacity duration-300 ease-out ${
           ready ? "opacity-100" : "opacity-0"
         }`}
       >
-        {tiles.slice(0, loadedCount).map((file) => (
-          <div key={file} className="mb-6 break-inside-avoid">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={`/graphic/${encodeURIComponent(file)}`}
-              alt=""
-              className="block h-auto w-full rounded-xl"
-            />
+        {Array.from({ length: cols }, (_, c) => (
+          <div key={c} className="flex min-w-0 flex-1 flex-col gap-6">
+            {tiles
+              .slice(0, loadedCount)
+              .filter((_, i) => i % cols === c)
+              .map((file) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  key={file}
+                  src={`/graphic/${encodeURIComponent(file)}`}
+                  alt=""
+                  className="block h-auto w-full rounded-xl"
+                />
+              ))}
           </div>
         ))}
       </div>
