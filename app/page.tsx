@@ -5,7 +5,7 @@ const NAME = "Finnian Murphy";
 const NAME_WORDS = NAME.split(" ");
 
 const ABOUT = [
-  "I'm Fin, a Math and CS double major at Georgetown. I build native iOS apps, AI-integrated full-stack tools, and CLI utils. Build what people AND agents want.",
+  "I'm Fin, a Math and CS double major at Georgetown. I build iOS apps, AI-integrated full-stack tools, and CLI utils.",
   { text: "= Frontend: Next.js, React, HTML + CSS + Tailwind", href: "/skills#frontend" },
   { text: "= Backend: Apple SDK, C++, Java, SwiftUI, Python", href: "/skills#backend" },
   { text: "= Frameworks: SupaBase, Cloudflare Workers / AI, Vercel", href: "/skills#frameworks" },
