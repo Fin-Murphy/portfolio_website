@@ -74,6 +74,14 @@ export default function SkillsPage() {
                 What I&apos;m Reading
               </Link>
             </p>
+                        <p>
+              <Link
+                href="/my-articles"
+                className="underline-offset-4 hover:text-orange-500 hover:underline"
+              >
+                What I&apos;m Writing
+              </Link>
+            </p>
             <p>Hybrid Training</p>
             <p>
               Photography
@@ -88,14 +96,7 @@ export default function SkillsPage() {
             <p>Drawing</p>
             <p>Playing the guitar (poorly)</p>
             <p>Playing the piano (even worse)</p>
-            <p>
-              <Link
-                href="/my-articles"
-                className="underline-offset-4 hover:text-orange-500 hover:underline"
-              >
-                What I&apos;m Writing
-              </Link>
-            </p>
+
           </section>
         </div>
       </div>
