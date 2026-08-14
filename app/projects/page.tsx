@@ -9,6 +9,11 @@ const PROJECTS = [
     title: "Protocol Tracker - Dog food for Reverb",
     href: "https://github.com/Fin-Murphy/Protocol-Tracker",
   },
+  {
+    icon: "📉",
+    title: "WSB Trader - probably the worst performing paper-trading bot ever made",
+    href: "https://github.com/Fin-Murphy/wsb-trader",
+  },
     {
     icon: "❌",
     title: "Bug Zapper - extension for deleting annoying page elements",
