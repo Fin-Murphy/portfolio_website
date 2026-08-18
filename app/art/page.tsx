@@ -12,9 +12,9 @@ export default function ArtPage() {
 
   return (
     <main className="flex-1 pt-4">
-      <h1 className="px-4 pb-4 text-center text-2xl font-bold">
+      {/* <h1 className="px-4 pb-4 text-center text-2xl font-bold">
         In a sea of AI slop art, create by hand. Pen, Pencil, Ink, Camera, Crayon.
-      </h1>
+      </h1> */}
       <ArtWall images={files} />
     </main>
   );

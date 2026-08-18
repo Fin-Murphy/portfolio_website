@@ -1,8 +1,11 @@
+import Link from "next/link";
+
 const ARTICLES = [
-  { title: "Digital vs. Physical Minimalism", href: "/digital-vs-physical-minimalism" },
   { title: "Media is evil. Why?", href: "/media-is-evil" },
-  { title: "Balancing Handwritten and LLM Code", href: "/balancing-handwritten-and-llm-code" },
   { title: "Losing the craft", href: "/losing-the-craft" },
+  { title: "Balancing Handwritten and LLM Code", href: "/balancing-handwritten-and-llm-code" },
+  { title: "Digital vs. Physical Minimalism", href: "/digital-vs-physical-minimalism" },
+
 ];
 
 
@@ -26,6 +29,14 @@ export default function FavArticlesPage() {
               </a>
             </p>
           ))}
+          <p className="pt-8">
+            <Link
+              href="/fav-articles"
+              className="underline-offset-4 hover:text-orange-500 hover:underline"
+            >
+              &gt; What I&apos;m Reading
+            </Link>
+          </p>
         </div>
       </div>
     </main>
