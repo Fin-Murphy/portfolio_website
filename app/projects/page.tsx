@@ -10,6 +10,11 @@ const PROJECTS = [
     href: "https://github.com/Fin-Murphy/Protocol-Tracker",
   },
   {
+    icon: "🐮",
+    title: "Moo'd - A native Obsidian Mood Board",
+    href: "https://github.com/Fin-Murphy/Moo-d-board-Obsidian-",
+  },
+  {
     icon: "📉",
     title: "WSB Trader - probably the worst performing paper-trading bot ever made",
     href: "https://github.com/Fin-Murphy/wsb-trader",
