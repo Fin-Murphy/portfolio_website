@@ -12,7 +12,7 @@ const PROJECTS = [
   {
     icon: "🐮",
     title: "Moo'd - A native Obsidian Mood Board",
-    href: "https://github.com/Fin-Murphy/Moo-d-board-Obsidian-",
+    href: "https://github.com/Fin-Murphy/Moo-d-board-Obsidian-/blob/main/README.md",
   },
   {
     icon: "📉",
