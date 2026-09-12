@@ -21,7 +21,7 @@ const PROJECTS = [
   },
   {
     icon: "📉",
-    title: "WSB Trader - probably the worst performing paper-trading bot ever made",
+    title: "WSB Trader - probably the worst performing trading bot ever made",
     href: "https://github.com/Fin-Murphy/wsb-trader",
   },
     {
