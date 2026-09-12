@@ -1,4 +1,9 @@
 const PROJECTS = [
+  {
+    icon: "🧊",
+    title: "Rubiks-Benchmark - can an LLM solve a Rubik's cube?",
+    href: "https://github.com/Fin-Murphy/rubiks-bench",
+  },
     {
     icon: "🗂️",
     title: "Reverb - an AI-powered productivity application",
