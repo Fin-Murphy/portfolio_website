@@ -14,7 +14,7 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-const LOADER_MS = 2000;
+const LOADER_MS = 3000;
 
 // Mirrors Tailwind's default sm/md/lg breakpoints.
 function columnCount(width: number): number {
