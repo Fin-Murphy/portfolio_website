@@ -1,6 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
+
+type ArtImage = { src: string; width: number; height: number };
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
@@ -11,7 +14,7 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-const LOADER_MS = 4200;
+const LOADER_MS = 2000;
 
 // Mirrors Tailwind's default sm/md/lg breakpoints.
 function columnCount(width: number): number {
@@ -21,44 +24,38 @@ function columnCount(width: number): number {
   return 2;
 }
 
-function preloadImage(src: string): Promise<void> {
-  return new Promise((resolve) => {
-    const img = new Image();
-    img.onload = () => resolve();
-    img.onerror = () => resolve();
-    img.src = src;
-  });
+function Tile({ image }: { image: ArtImage }) {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <Image
+      src={image.src}
+      width={image.width}
+      height={image.height}
+      // Mirrors columnCount() so the browser fetches a ~column-width file.
+      sizes="(min-width: 1024px) 20vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, 50vw"
+      alt=""
+      onLoad={() => setLoaded(true)}
+      className={`block h-auto w-full rounded-xl transition-opacity duration-300 ease-out ${
+        loaded ? "opacity-100" : "opacity-0"
+      }`}
+    />
+  );
 }
 
-export default function ArtWall({ images }: { images: string[] }) {
-  const [tiles, setTiles] = useState<string[]>(images);
-  // Tiles only render once their image is fully cached, so nothing ever
-  // paints half-loaded; they appear top-down as the sequential preload runs.
+export default function ArtWall({ images }: { images: ArtImage[] }) {
+  // Tiles stay empty until the client shuffle, so the server never renders
+  // unshuffled images that would start downloading first. Each tile reserves
+  // its space and fades in once decoded, so nothing ever paints half-loaded.
   // They are dealt round-robin into fixed flex columns rather than CSS
   // `columns`, which re-balances (and visibly shifts) every tile on append.
-  const [loadedCount, setLoadedCount] = useState(0);
+  const [tiles, setTiles] = useState<ArtImage[]>([]);
   const [ready, setReady] = useState(false);
   const [cols, setCols] = useState(2);
 
   useEffect(() => {
-    const shuffled = shuffle(images);
-    setTiles(shuffled);
-    setLoadedCount(0);
-
-    let cancelled = false;
-    (async () => {
-      for (let i = 0; i < shuffled.length; i++) {
-        await preloadImage(`/graphic/${encodeURIComponent(shuffled[i])}`);
-        if (cancelled) return;
-        setLoadedCount(i + 1);
-      }
-    })();
-
+    setTiles(shuffle(images));
     const t = setTimeout(() => setReady(true), LOADER_MS);
-    return () => {
-      cancelled = true;
-      clearTimeout(t);
-    };
+    return () => clearTimeout(t);
   }, [images]);
 
   useEffect(() => {
@@ -94,17 +91,8 @@ export default function ArtWall({ images }: { images: string[] }) {
         {Array.from({ length: cols }, (_, c) => (
           <div key={c} className="flex min-w-0 flex-1 flex-col gap-6">
             {tiles
-              .slice(0, loadedCount)
               .filter((_, i) => i % cols === c)
-              .map((file) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  key={file}
-                  src={`/graphic/${encodeURIComponent(file)}`}
-                  alt=""
-                  className="block h-auto w-full rounded-xl"
-                />
-              ))}
+              .map((image) => <Tile key={image.src} image={image} />)}
           </div>
         ))}
       </div>
