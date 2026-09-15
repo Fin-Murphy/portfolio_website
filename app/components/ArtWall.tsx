@@ -96,6 +96,16 @@ export default function ArtWall({ images }: { images: ArtImage[] }) {
           </div>
         ))}
       </div>
+      {/* Tiles reserve their full height before loading, so this stays below
+          every image. Hidden with the wall so it doesn't show during the loader. */}
+      <a
+        href="https://www.instagram.com/finny_murph/"
+        className={`mx-12 my-12 block rounded-xl bg-zinc-100 px-6 py-6 text-center text-lg underline-offset-4 transition-opacity duration-300 ease-out hover:text-orange-500 hover:underline sm:text-xl dark:bg-zinc-900 ${
+          ready ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        See all my photography at finny_murph on instagram
+      </a>
     </>
   );
 }
