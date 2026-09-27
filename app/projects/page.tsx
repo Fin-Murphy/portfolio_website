@@ -45,6 +45,11 @@ const PROJECTS = [
     href: "https://github.com/Fin-Murphy/canvProj-main",
   },
   {
+    icon: "📄",
+    title: "remarkable-sidecar - turns your reMarkable 2 into a sidecar screen extension",
+    href: "https://github.com/Fin-Murphy/remarkable-sidecar",
+  },
+  {
     icon: "🌊",
     title: "portfolio - this site! pretty cool huh?",
     href: "https://github.com/Fin-Murphy/portfolio_website",
