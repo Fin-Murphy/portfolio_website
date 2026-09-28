@@ -54,6 +54,10 @@ export default function ArtWall({ images }: { images: ArtImage[] }) {
 
   useEffect(() => {
     setTiles(shuffle(images));
+    if (window.innerWidth < 1024) {
+      setReady(true);
+      return;
+    }
     const t = setTimeout(() => setReady(true), LOADER_MS);
     return () => clearTimeout(t);
   }, [images]);
