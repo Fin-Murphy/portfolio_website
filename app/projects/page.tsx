@@ -10,6 +10,11 @@ const PROJECTS = [
     href: "https://github.com/Fin-Murphy/Reverb_Public",
   },
   {
+    icon: "📄",
+    title: "remarkable-sidecar - turns your reMarkable 2 into a sidecar screen extension",
+    href: "https://github.com/Fin-Murphy/remarkable-sidecar",
+  },
+  {
     icon: "🔁",
     title: "Protocol Tracker - Dog food for Reverb",
     href: "https://github.com/Fin-Murphy/Protocol-Tracker",
@@ -43,11 +48,6 @@ const PROJECTS = [
     icon: "📚",
     title: "canvProj - Canvas assignments -> Obsidian.md Kanban",
     href: "https://github.com/Fin-Murphy/canvProj-main",
-  },
-  {
-    icon: "📄",
-    title: "remarkable-sidecar - turns your reMarkable 2 into a sidecar screen extension",
-    href: "https://github.com/Fin-Murphy/remarkable-sidecar",
   },
   {
     icon: "🌊",
