@@ -27,6 +27,7 @@ export default function RootLayout({
       className={`${geistMono.variable} h-full antialiased`}
     >
       <head>
+        {/* LOADER DISABLED — uncomment to re-enable video preload
         <link
           rel="preload"
           as="video"
@@ -34,11 +35,13 @@ export default function RootLayout({
           type="video/mp4"
           fetchPriority="high"
         />
+        */}
       </head>
       <body className="min-h-full flex flex-col pt-12">
         <AsciiBackground />
         <TopBar />
         {children}
+        {/* LOADER DISABLED — uncomment to re-enable video prefetch
         <video
           src="/loader.mp4"
           preload="auto"
@@ -47,6 +50,7 @@ export default function RootLayout({
           aria-hidden="true"
           className="pointer-events-none absolute h-0 w-0 opacity-0"
         />
+        */}
       </body>
     </html>
   );

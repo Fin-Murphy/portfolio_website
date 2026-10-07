@@ -14,7 +14,7 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-const LOADER_MS = 3000;
+// const LOADER_MS = 3000;
 
 // Mirrors Tailwind's default sm/md/lg breakpoints.
 function columnCount(width: number): number {
@@ -54,12 +54,13 @@ export default function ArtWall({ images }: { images: ArtImage[] }) {
 
   useEffect(() => {
     setTiles(shuffle(images));
-    if (window.innerWidth < 1024) {
-      setReady(true);
-      return;
-    }
-    const t = setTimeout(() => setReady(true), LOADER_MS);
-    return () => clearTimeout(t);
+    setReady(true);
+    // if (window.innerWidth < 1024) {
+    //   setReady(true);
+    //   return;
+    // }
+    // const t = setTimeout(() => setReady(true), LOADER_MS);
+    // return () => clearTimeout(t);
   }, [images]);
 
   useEffect(() => {
@@ -71,6 +72,7 @@ export default function ArtWall({ images }: { images: ArtImage[] }) {
 
   return (
     <>
+      {/* LOADER DISABLED — uncomment to re-enable the video splash screen
       {!ready && (
         <div className="pointer-events-none fixed inset-0 z-30 flex items-center justify-center">
           <div className="rounded-3xl bg-zinc-100 p-4 shadow-lg sm:p-6 dark:bg-zinc-900">
@@ -87,6 +89,7 @@ export default function ArtWall({ images }: { images: ArtImage[] }) {
           </div>
         </div>
       )}
+      */}
       <div
         className={`flex gap-6 px-12 transition-opacity duration-300 ease-out ${
           ready ? "opacity-100" : "opacity-0"
