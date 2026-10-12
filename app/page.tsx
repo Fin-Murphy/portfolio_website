@@ -32,7 +32,7 @@ export default function Home() {
                 {word.split("").map((char, i) => (
                   <span
                     key={i}
-                    className="inline-block transition-all duration-500 ease-[steps(6,jump-end)] group-hover:-translate-y-1 group-hover:text-orange-500 dark:group-hover:text-orange-400"
+                    className="inline-block transition-all duration-500 ease-[steps(6,jump-end)] group-hover:text-orange-500 dark:group-hover:text-orange-400"
                     style={{ transitionDelay: `${(offset + i) * 30}ms` }}
                   >
                     {char}

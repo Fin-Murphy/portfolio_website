@@ -1,4 +1,4 @@
-const RAMP = "   .~x+*oO0"; // sparse -> dense
+const RAMP = "   .~+x*oOX0"; // sparse -> dense
 // const RAMP = "12345678"; // sparse -> dense, more contrast
 
 export type WaveContext = {
@@ -15,7 +15,7 @@ const Y_SQUASH = 2;
 
 // Reach of the cursor halo, in character columns. Also sizes the orange tint
 // that AsciiBackground paints around the cursor.
-export const CURSOR_RADIUS = 5;
+export const CURSOR_RADIUS = 6;
 
 /**
  * A slow field of summed sine waves, rendered as a grid of density characters,

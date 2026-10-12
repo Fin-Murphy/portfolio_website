@@ -65,7 +65,7 @@ export default function AsciiBackground() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 -z-10 select-none overflow-hidden text-zinc-400 [--halo-color:var(--color-orange-500)] dark:text-zinc-600 dark:[--halo-color:var(--color-orange-400)]"
+      className="pointer-events-none fixed inset-0 -z-10 select-none overflow-hidden text-zinc-400 [--halo-color:var(--color-orange-600)] dark:text-zinc-600 dark:[--halo-color:var(--color-orange-400)]"
     >
       <span
         ref={measureRef}
