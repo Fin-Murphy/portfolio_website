@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
-import AsciiBackground from "@/app/components/AsciiBackground";
+import RandomBackground from "@/app/components/RandomBackground";
 import TopBar from "@/app/components/TopBar";
 import "./globals.css";
 
@@ -38,7 +38,7 @@ export default function RootLayout({
         */}
       </head>
       <body className="min-h-full flex flex-col pt-12">
-        <AsciiBackground />
+        <RandomBackground />
         <TopBar />
         {children}
         {/* LOADER DISABLED — uncomment to re-enable video prefetch
