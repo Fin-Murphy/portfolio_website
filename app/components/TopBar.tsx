@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ThemeToggle from "@/app/components/ThemeToggle";
 
 const LINKS = [
   { label: "  ", href: ""},
@@ -22,6 +23,11 @@ export default function TopBar() {
             {label}
           </Link>
         ))}
+        {/* ml-auto pins it to the row's right edge (the home page's max-w-4xl
+            body block); mr-16 insets it a bit past that block's px-13 text. */}
+        <div className="ml-auto mr-16 flex">
+          <ThemeToggle />
+        </div>
       </div>
     </nav>
   );

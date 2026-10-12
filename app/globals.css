@@ -12,14 +12,16 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Theme is a `.dark` class on <html>, set by the inline script in layout.tsx
+   (cookie if the user picked one, otherwise the system preference). */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Gate hover-driven interactivity to devices with a real mouse pointer. */
 @custom-variant desktop (@media (hover: hover) and (pointer: fine));
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --foreground: #ededed;
-  }
+:root.dark {
+  --background: #000000;
+  --foreground: #ededed;
 }
 
 body {

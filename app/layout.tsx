@@ -14,6 +14,20 @@ export const metadata: Metadata = {
   description: "Software engineering portfolio of Finnian Murphy.",
 };
 
+// Runs before first paint so there's no light/dark flash. A `theme` cookie
+// (written only when the user clicks ThemeToggle) wins; otherwise follow the
+// system preference, including live changes to it.
+const THEME_SCRIPT = `(function () {
+  var root = document.documentElement;
+  var media = matchMedia("(prefers-color-scheme: dark)");
+  function apply() {
+    var cookie = document.cookie.match(/(?:^|; )theme=(light|dark)(?:;|$)/);
+    root.classList.toggle("dark", cookie ? cookie[1] === "dark" : media.matches);
+  }
+  apply();
+  media.addEventListener("change", apply);
+})();`;
+
 export default function RootLayout({
   children,
 
@@ -25,8 +39,11 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistMono.variable} h-full antialiased`}
+      // THEME_SCRIPT adds `.dark` before hydration.
+      suppressHydrationWarning
     >
       <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
         {/* LOADER DISABLED — uncomment to re-enable video preload
         <link
           rel="preload"
