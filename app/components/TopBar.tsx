@@ -10,16 +10,18 @@ const LINKS = [
 
 export default function TopBar() {
   return (
-    <nav className="fixed inset-x-0 top-0 z-20 flex items-center gap-7 bg-white/60 px-6 py-3 text-sm dark:bg-background/60">
-      {LINKS.map(({ label, href }) => (
-        <Link
-          key={href}
-          href={href}
-          className="underline-offset-4 hover:text-orange-500 hover:underline"
-        >
-          {label}
-        </Link>
-      ))}
+    <nav className="fixed inset-x-0 top-0 z-20 bg-white/60 px-6 py-3 text-sm dark:bg-background/60">
+      <div className="mx-auto flex max-w-4xl items-center gap-7">
+        {LINKS.map(({ label, href }) => (
+          <Link
+            key={href}
+            href={href}
+            className="underline-offset-4 hover:text-orange-500 hover:underline"
+          >
+            {label}
+          </Link>
+        ))}
+      </div>
     </nav>
   );
 }
