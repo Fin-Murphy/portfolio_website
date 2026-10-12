@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
+import { getImageProps } from "next/image";
 import RandomBackground from "@/app/components/RandomBackground";
 import TopBar from "@/app/components/TopBar";
+import { SCAN_DARK, SCAN_LIGHT } from "@/app/lib/scanBackground";
 import "./globals.css";
 
 const geistMono = Geist_Mono({
@@ -28,6 +30,29 @@ const THEME_SCRIPT = `(function () {
   media.addEventListener("change", apply);
 })();`;
 
+function preloadAttrs({ src, sizes }: typeof SCAN_LIGHT) {
+  return { srcSet: getImageProps({ src, sizes, alt: "" }).props.srcSet, sizes };
+}
+
+// Coin-flips the background (RandomBackground reads the result from
+// `window.__bg`). For the scan, it starts fetching the current theme's image
+// during HTML parse instead of after JS loads and hydrates. Must run after
+// THEME_SCRIPT so the `.dark` class is already set.
+const BG_SCRIPT = `(function () {
+  var scan = Math.random() < 0.5;
+  window.__bg = scan ? "scan" : "ascii";
+  if (!scan) return;
+  var images = ${JSON.stringify({ light: preloadAttrs(SCAN_LIGHT), dark: preloadAttrs(SCAN_DARK) })};
+  var img = images[document.documentElement.classList.contains("dark") ? "dark" : "light"];
+  var link = document.createElement("link");
+  link.rel = "preload";
+  link.as = "image";
+  link.imageSrcset = img.srcSet;
+  link.imageSizes = img.sizes;
+  link.fetchPriority = "high";
+  document.head.appendChild(link);
+})();`;
+
 export default function RootLayout({
   children,
 
@@ -44,6 +69,7 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+        <script dangerouslySetInnerHTML={{ __html: BG_SCRIPT }} />
         {/* LOADER DISABLED — uncomment to re-enable video preload
         <link
           rel="preload"
