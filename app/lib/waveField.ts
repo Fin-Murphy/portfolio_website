@@ -13,8 +13,9 @@ export type WaveContext = {
 // smeared along the rows.
 const Y_SQUASH = 2;
 
-// Reach of the cursor halo, in character columns.
-const CURSOR_RADIUS = 5;
+// Reach of the cursor halo, in character columns. Also sizes the orange tint
+// that AsciiBackground paints around the cursor.
+export const CURSOR_RADIUS = 5;
 
 /**
  * A slow field of summed sine waves, rendered as a grid of density characters,

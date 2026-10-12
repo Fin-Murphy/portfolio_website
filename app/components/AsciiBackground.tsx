@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useAnimationFrame } from "@/app/hooks/useAnimationFrame";
-import { waveField } from "@/app/lib/waveField";
+import { CURSOR_RADIUS, waveField } from "@/app/lib/waveField";
 
 const FONT_CLASSES = "font-mono text-[10px] leading-[1.2]";
 
@@ -29,6 +29,7 @@ export default function AsciiBackground() {
       // and is the only frame shown when prefers-reduced-motion is set.
       if (preRef.current) {
         preRef.current.textContent = waveField(0, { cols, rows, mouse: null });
+        preRef.current.style.setProperty("--halo-r", `${CURSOR_RADIUS * w}px`);
       }
     };
     measure();
@@ -44,6 +45,8 @@ export default function AsciiBackground() {
     const onMove = (e: PointerEvent) => {
       const { w, h } = cellRef.current;
       mouseRef.current = { col: Math.floor(e.clientX / w), row: Math.floor(e.clientY / h) };
+      preRef.current?.style.setProperty("--mx", `${e.clientX}px`);
+      preRef.current?.style.setProperty("--my", `${e.clientY}px`);
     };
     window.addEventListener("pointermove", onMove);
     return () => window.removeEventListener("pointermove", onMove);
@@ -62,7 +65,7 @@ export default function AsciiBackground() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 -z-10 select-none overflow-hidden text-zinc-400 dark:text-zinc-600"
+      className="pointer-events-none fixed inset-0 -z-10 select-none overflow-hidden text-zinc-400 [--halo-color:var(--color-orange-500)] dark:text-zinc-600 dark:[--halo-color:var(--color-orange-400)]"
     >
       <span
         ref={measureRef}
@@ -71,10 +74,24 @@ export default function AsciiBackground() {
       >
         0000000000
       </span>
+      {/* The glyphs are filled with a radial gradient centred on the cursor
+          (--mx/--my, set on pointermove): orange at the centre, fading into the
+          grey `currentColor` roughly like the halo's falloff in waveField —
+          half-mixed at one radius, fully grey by three. Before any pointer
+          move the centre sits far off-screen, so the wall is uniformly grey. */}
       <pre
         ref={preRef}
         className={FONT_CLASSES}
-        style={{ fontVariantLigatures: "none", whiteSpace: "pre" }}
+        style={{
+          fontVariantLigatures: "none",
+          whiteSpace: "pre",
+          backgroundImage:
+            "radial-gradient(circle at var(--mx, -9999px) var(--my, -9999px), var(--halo-color), color-mix(in oklab, var(--halo-color) 50%, currentColor) var(--halo-r), currentColor calc(var(--halo-r) * 3))",
+          backgroundClip: "text",
+          WebkitBackgroundClip: "text",
+          // Hide the glyph fill (not `color`) so `currentColor` stays the grey.
+          WebkitTextFillColor: "transparent",
+        }}
       />
     </div>
   );
