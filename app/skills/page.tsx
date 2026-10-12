@@ -30,7 +30,7 @@ export default function SkillsPage() {
           <section id="frontend" className="scroll-mt-20 space-y-3">
             <h2 className="text-3xl font-semibold">Frontend</h2>
             <p>HTML + CSS + Tailwind : Portfolio websites, product landing pages</p>
-            <p>Next.js, React: Mobile applications, vercel deployments (also for portfolio)</p>
+            <p>Next.js, React: Mobile applications, vercel deployments </p>
           </section>
 
           <section id="backend" className="scroll-mt-20 space-y-3">
