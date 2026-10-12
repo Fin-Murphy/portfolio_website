@@ -40,7 +40,7 @@ export default function RandomBackground() {
         placeholder="blur"
         fetchPriority="high"
         sizes={SCAN_LIGHT.sizes}
-        className="h-full w-auto max-w-none opacity-50 dark:hidden"
+        className="h-full w-auto max-w-none opacity-40 dark:hidden"
       />
       <Image
         src={SCAN_DARK.src}

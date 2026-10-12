@@ -89,7 +89,7 @@ const PROJECTS = [
 export default function ProjectsPage() {
   return (
     <main className="flex flex-1 flex-col items-center pt-12">
-      <div className="flex flex-1 items-center justify-center px-6">
+      <div className="flex flex-1 items-center justify-center px-6 pb-16">
         <ul className="max-w-5xl space-y-8 bg-white/75 px-7 py-7 text-lg text-black sm:text-xl dark:bg-background/75 dark:text-white">
           {PROJECTS.map((project) => (
             <li key={project.href} className="flex items-center gap-4">

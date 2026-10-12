@@ -12,8 +12,10 @@ const LINKS = [
 
 export default function TopBar() {
   return (
-    <nav className="fixed inset-x-0 top-0 z-20 bg-white/60 px-6 py-3 text-sm dark:bg-background/60">
-      <div className="mx-auto flex max-w-4xl items-center gap-7">
+    // px-6 + max-w-4xl mirror the home page's body block, so the bar
+    // lines up with it instead of spanning the screen.
+    <nav className="fixed inset-x-0 top-0 z-20 px-6 text-sm">
+      <div className="mx-auto flex max-w-4xl items-center gap-7 bg-white/65 py-3 dark:bg-background/65">
         {LINKS.map(({ label, href }) => (
           <Link
             key={href}
@@ -24,8 +26,8 @@ export default function TopBar() {
           </Link>
         ))}
         {/* ml-auto pins it to the row's right edge (the home page's max-w-4xl
-            body block); mr-16 insets it a bit past that block's px-13 text. */}
-        <div className="ml-auto mr-16 flex">
+            body block); mr-12 insets it roughly in line with that block's px-13 text. */}
+        <div className="ml-auto mr-12 flex">
           <ThemeToggle />
         </div>
       </div>
