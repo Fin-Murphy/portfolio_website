@@ -12,7 +12,7 @@ export default function SkillsPage() {
   return (
     <main className="flex flex-1 flex-col items-center pt-12">
       <div className="flex flex-1 justify-center px-6 pb-16">
-        <div className="w-full max-w-6xl space-y-10 bg-white/40 px-10 py-6 text-lg text-black sm:text-xl dark:bg-background/40 dark:text-white">
+        <div className="w-full max-w-6xl space-y-10 bg-white/55 px-10 py-6 text-lg text-black sm:text-xl dark:bg-background/55 dark:text-white">
           <ul className="space-y-3 border-b border-black/20 pb-6 dark:border-white/20">
             {SECTIONS.map((s) => (
               <li key={s.id}>

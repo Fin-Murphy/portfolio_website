@@ -2,7 +2,7 @@ export default function BalancingHandwrittenAndLlmCodePage() {
     return (
         <main className="flex flex-1 flex-col items-center pt-12">
             <div className="flex flex-1 items-start justify-center px-6 pb-16">
-                <article className="max-w-3xl space-y-6 bg-white/70 px-6 py-6 text-base leading-relaxed text-black shadow-lg shadow-black/10 sm:text-lg dark:bg-background/60 dark:text-white dark:shadow-black/30">
+                <article className="max-w-3xl space-y-6 bg-white/85 px-6 py-6 text-base leading-relaxed text-black shadow-lg shadow-black/10 sm:text-lg dark:bg-background/75 dark:text-white dark:shadow-black/30">
                     <header className="space-y-2 border-b border-black/20 pb-4 dark:border-white/20">
                         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
                             Losing the Craft
