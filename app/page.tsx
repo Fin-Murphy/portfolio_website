@@ -46,7 +46,7 @@ export default function Home() {
 
 
       <div className="flex flex-1 items-center justify-center px-6">
-        <ul className="max-w-4xl space-y-6 bg-white/40 px-13 py-6 text-lg text-black sm:text-xl dark:bg-background/40 dark:text-white">
+        <ul className="max-w-4xl space-y-6 bg-white/45 px-13 py-6 text-lg text-black sm:text-xl dark:bg-background/45 dark:text-white">
           <li className="flex items-center gap-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"

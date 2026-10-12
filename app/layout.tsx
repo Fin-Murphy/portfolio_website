@@ -36,13 +36,14 @@ function preloadAttrs({ src, sizes }: typeof SCAN_LIGHT) {
 
 // Starts fetching the current theme's scan image during HTML parse instead of
 // after JS loads and hydrates. Must run after THEME_SCRIPT so the `.dark` class
-// is already set.
+// is already set. Skipped on /art, which uses the ASCII background instead.
 // ASCII DISABLED — uncomment the three lines below (and the matching lines in
 // RandomBackground) to restore the ASCII/scan coin flip.
 const BG_SCRIPT = `(function () {
   // var scan = Math.random() < 0.5;
   // window.__bg = scan ? "scan" : "ascii";
   // if (!scan) return;
+  if (location.pathname === "/art") return;
   var images = ${JSON.stringify({ light: preloadAttrs(SCAN_LIGHT), dark: preloadAttrs(SCAN_DARK) })};
   var img = images[document.documentElement.classList.contains("dark") ? "dark" : "light"];
   var link = document.createElement("link");
