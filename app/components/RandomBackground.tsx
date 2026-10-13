@@ -54,7 +54,7 @@ export default function RandomBackground() {
     </div>
     {/* EXPERIMENT — ASCII wave field overlaid on the scan. Same -z-10 layer;
         rendering it after the scan puts it on top. */}
-    <AsciiBackground className="opacity-55" />
+    <AsciiBackground className="opacity-58 dark:opacity-55" />
     </>
   );
 }
