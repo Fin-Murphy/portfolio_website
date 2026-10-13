@@ -6,7 +6,7 @@ import { CURSOR_RADIUS, waveField } from "@/app/lib/waveField";
 
 const FONT_CLASSES = "font-mono text-[10px] leading-[1.2]";
 
-export default function AsciiBackground() {
+export default function AsciiBackground({ className = "" }: { className?: string }) {
   const preRef = useRef<HTMLPreElement>(null);
   const measureRef = useRef<HTMLSpanElement>(null);
   const cellRef = useRef({ w: 6, h: 12 });
@@ -65,7 +65,7 @@ export default function AsciiBackground() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 -z-10 select-none overflow-hidden text-zinc-400 [--halo-color:var(--color-orange-600)] dark:text-zinc-600 dark:[--halo-color:var(--color-orange-400)]"
+      className={`pointer-events-none fixed inset-0 -z-10 select-none overflow-hidden text-zinc-400 [--halo-color:var(--color-orange-600)] dark:text-zinc-600 dark:[--halo-color:var(--color-orange-400)] ${className}`}
     >
       <span
         ref={measureRef}

@@ -30,6 +30,7 @@ export default function RandomBackground() {
   if (pathname === "/art") return <AsciiBackground />;
 
   return (
+    <>
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 flex justify-center overflow-hidden">
       {/* Only the visible image loads: both stay lazy (no `preload`) so the
           display:none one is never fetched. BG_SCRIPT has usually already
@@ -40,7 +41,7 @@ export default function RandomBackground() {
         placeholder="blur"
         fetchPriority="high"
         sizes={SCAN_LIGHT.sizes}
-        className="h-full w-auto max-w-none opacity-40 dark:hidden"
+        className="h-full w-auto max-w-none opacity-45 dark:hidden"
       />
       <Image
         src={SCAN_DARK.src}
@@ -48,8 +49,12 @@ export default function RandomBackground() {
         placeholder="blur"
         fetchPriority="high"
         sizes={SCAN_DARK.sizes}
-        className="hidden h-full w-auto max-w-none opacity-35 dark:block"
+        className="hidden h-full w-auto max-w-none opacity-40 dark:block"
       />
     </div>
+    {/* EXPERIMENT — ASCII wave field overlaid on the scan. Same -z-10 layer;
+        rendering it after the scan puts it on top. */}
+    <AsciiBackground className="opacity-55" />
+    </>
   );
 }
